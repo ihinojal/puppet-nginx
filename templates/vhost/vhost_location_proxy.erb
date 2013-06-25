@@ -9,6 +9,8 @@
     proxy_pass          <%= proxy %>;
     proxy_read_timeout  <%= proxy_read_timeout %>;
 <% if @location_cfg_append -%><% location_cfg_append.sort_by {|k,v| k}.each do |key,value| -%>
-    <%= key %> <%= value %>;
+    <% value.each do |val|-%>
+        <%= key %> <%= val %>;
+    <% end -%>
 <% end -%><% end -%>
   }
