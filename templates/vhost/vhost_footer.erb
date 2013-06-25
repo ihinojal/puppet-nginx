@@ -3,7 +3,9 @@ include <%= file %>;
 <% end -%><% end -%>
 
 <% if @vhost_cfg_append -%><% vhost_cfg_append.each do |key,value| -%>
-  <%= key %> <%= value %>;
+  <% Array(value).each do |val|-%>
+      <%= key %> <%= val %>;
+  <% end -%>
 <% end -%><% end -%>
 
 }
