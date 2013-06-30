@@ -58,6 +58,7 @@
 #  }
 define nginx::resource::vhost (
   $ensure                 = 'enable',
+  $listen                 = [],
   $listen_ip              = '*',
   $listen_port            = '80',
   $listen_options         = undef,
